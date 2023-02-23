@@ -11,4 +11,4 @@ The game is played with black-and-white tiles on an 8x8 board. The object of the
 - When the board is completely covered in tiles, or there are no more legal moves, then the game is over. Whichever player has more tiles of their color on the board wins. The program will announce the winner and how many tiles they have on the board. The program will also prompt the user for their name and save their name and score (# of black tiles on the board) in a file. Ties can happen, too.
 
 ## Disclaimer
-This is a personal project for CS5001 Intensive Foundations of Computer Science and a Git repository was not used originally. For maintaining academic integrity, please do NOT reuse any code in this repository if you are working on your project for a related course.
+This is a personal project for *CS5001 Intensive Foundations of CS*. A Git repository was not used originally. For academic integrity, please do NOT reuse any code in this repository if you are working on your project for a related course.
