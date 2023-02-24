@@ -2,7 +2,8 @@
 A Python-based Othello game built with [Processing Python mode](https://py.processing.org/).
 ## Instructions
 
-[Processing 3.5.4](https://processing.org/releases) and Python3 are needed for playing the game. To start the game, open the folder in Processing and start with `othello.pyde`. 
+[Processing 3.5.4](https://processing.org/releases) and Python3 are needed for playing the game. 
+To start the game, open the folder in Processing and start with `othello.pyde`. 
 
 ## Game Basics
 
