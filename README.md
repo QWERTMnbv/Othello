@@ -1,7 +1,8 @@
 # Othello
 A Python-based Othello game built with Python3 and [Processing Python mode](https://py.processing.org/).
 
-This repository contains a demo of my project for *CS5001 Intensive Foundations of CS*. Please note that this is only a demo and the full source code cannot be shared due to potential plagiarism issues.
+## Limitations
+This repository contains a demo of my project for *CS5001 Intensive Foundations of CS*. As this is a course project, and the project may also be used as a final project for upcoming semesters, I cannot provide access to the project's source code. Unfortunately, I do not have any executable code available to share with you at this time. However, I have provided some GIFs that showcase the key features of the project, which should give you a good idea of its functionality.
 
 If you are interested in learning more about my project or seeing the full source code, please feel free to contact me directly.
 
