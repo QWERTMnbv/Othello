@@ -1,8 +1,11 @@
 import random
 import time
-import numpy as np
 
 from tile import Tile
+
+
+WHITE = 2
+BLACK = 1
 
 
 class Disk:
@@ -10,14 +13,15 @@ class Disk:
         self.CELL_SIZE = CELL_SIZE
         self.FIELD_SIZE = FIELD_SIZE
         self.TILE_SIZE = TILE_SIZE
+        self.TOTAL = 64
         self.black_count = 0
         self.white_count = 0
         self.grid = [[0] * FIELD_SIZE for _ in range(FIELD_SIZE)]
 
-        self.grid[int(FIELD_SIZE / 2 - 1)][int(FIELD_SIZE / 2 - 1)] = 2
-        self.grid[int(FIELD_SIZE / 2)][int(FIELD_SIZE / 2)] = 2
-        self.grid[int(FIELD_SIZE / 2 - 1)][int(FIELD_SIZE / 2)] = 1
-        self.grid[int(FIELD_SIZE / 2)][int(FIELD_SIZE / 2 - 1)] = 1
+        self.grid[int(FIELD_SIZE / 2 - 1)][int(FIELD_SIZE / 2 - 1)] = WHITE
+        self.grid[int(FIELD_SIZE / 2)][int(FIELD_SIZE / 2)] = WHITE
+        self.grid[int(FIELD_SIZE / 2 - 1)][int(FIELD_SIZE / 2)] = BLACK
+        self.grid[int(FIELD_SIZE / 2)][int(FIELD_SIZE / 2 - 1)] = BLACK
 
         self.VALID_DIR = [[0, 1], [1, 1], [1, 0], [1, -1],
                           [0, -1], [-1, -1], [-1, 0], [-1, 1]]
@@ -27,16 +31,16 @@ class Disk:
     @staticmethod
     def other_tile(color):
         if color == "black":
-            return 2
+            return WHITE
         else:
-            return 1
+            return BLACK
 
     @staticmethod
     def this_tile(color):
         if color == "black":
-            return 1
+            return BLACK
         else:
-            return 2
+            return WHITE
 
     def is_on_board(self, row, col):
         return 0 <= row < self.FIELD_SIZE and 0 <= col < self.FIELD_SIZE
@@ -128,9 +132,9 @@ class Disk:
         self.white_count, self.black_count = 0, 0
         for row in range(self.FIELD_SIZE):
             for col in range(self.FIELD_SIZE):
-                if self.grid[row][col] == 1:
+                if self.grid[row][col] == BLACK:
                     self.black_count += 1
-                if self.grid[row][col] == 2:
+                if self.grid[row][col] == WHITE:
                     self.white_count += 1
         if not self.has_valid_move("white") and \
                 not self.has_valid_move("black"):
@@ -138,7 +142,7 @@ class Disk:
         elif (self.black_count != 0 and self.white_count == 0) or \
                 (self.black_count == 0 and self.white_count != 0):
             return True
-        elif self.white_count + self.black_count == 64:
+        elif self.white_count + self.black_count == self.TOTAL:
             return True
         return False
 
